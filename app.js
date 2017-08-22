@@ -4,6 +4,7 @@ const app = express();
 app.use('/static', express.static('public'));
 
 app.get('/posts', function(req, res) {
+  res.header('Access-Control-Allow-Origin', '*');
   res.json([{
     avatar: 'http://localhost:8000/static/avatar.png',
     liked: false,
